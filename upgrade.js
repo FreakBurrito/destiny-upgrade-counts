@@ -134,8 +134,9 @@
       _ref = this.instance.perks();
       for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
         perk = _ref[_j];
-        perk_string += "" + (this.json.Response.definitions.perks[perk.perkHash()].displayName()) + "\n";
+        perk_string += "," + (this.json.Response.definitions.perks[perk.perkHash()].displayName());
       }
+      perk_string = perk_string.substr(1);
       mat_data = [];
       for (_k = 0, _len2 = material_name_list.length; _k < _len2; _k++) {
         name = material_name_list[_k];
