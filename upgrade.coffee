@@ -69,7 +69,9 @@ class Item
         stat_csv[stats_header.indexOf(stat)] = ""
     perk_string = ""
     for perk in @instance.perks()
-      perk_string += "#{@json.Response.definitions.perks[perk.perkHash()].displayName()}\n"
+      perk_string += ",#{@json.Response.definitions.perks[perk.perkHash()].displayName()}"
+    #Remove first comma from list of perks
+    perk_string = perk_string.substr(1)
     mat_data = []
     for name in material_name_list
       count = 0
